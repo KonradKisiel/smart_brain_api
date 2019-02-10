@@ -30,8 +30,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', (req, res)=> {res.send('it is working!')});
 //dependency injection
-app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt) })
+app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt) });
 //simplified functions verison, req, res passed automaticaly
 app.post('/register', register.handleRegister(db, bcrypt));
 
